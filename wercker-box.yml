@@ -12,6 +12,7 @@ script: |
   export COQ_VER=8.4pl4
 
   # install dependencies
+  sudo apt-get update -y
   sudo apt-get install -y make m4 python-software-properties
 
   # install ocaml and opam
