@@ -1,0 +1,34 @@
+name: coq
+version: 0.0.1
+description: Latest Coq
+type: main
+platform: ubuntu@12.04
+keywords:
+  - coq
+packages:
+  - coq@8.4pl4
+script: |
+  # variables
+  export COQ_VER=8.4pl4
+
+  # install dependencies
+  sudo apt-get install -y make m4 python-software-properties
+
+  # install ocaml and opam
+  sudo add-apt-repository -y ppa:avsm/ppa
+  sudo apt-get update
+  sudo apt-get install -y ocaml opam
+  opam init -y
+
+  # install ocamlfind and camlp5
+  opam install -y ocamlfind camlp5
+
+  # install coq
+  wget http://coq.inria.fr/distrib/V${COQ_VER}/files/coq-${COQ_VER}.tar.gz
+  tar xf coq-${COQ_VER}.tar.gz
+  cd coq-${COQ_VER}
+  ./configure --prefix /usr/local -camlp5dir `~/.opam/system/bin/ocamlfind query camlp5`
+  make world -j4 && make install
+
+  # check
+  coqtop -v
