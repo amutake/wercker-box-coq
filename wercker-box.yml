@@ -20,6 +20,8 @@ script: |
   sudo apt-get update
   sudo apt-get install -y ocaml opam
   opam init -y
+  eval `opam config env`
+  echo 'eval `opam config env`' | sudo tee -a /etc/profile
 
   # install ocamlfind and camlp5
   opam install -y ocamlfind camlp5
