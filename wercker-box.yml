@@ -31,7 +31,8 @@ script: |
   tar xf coq-${COQ_VER}.tar.gz
   cd coq-${COQ_VER}
   ./configure --prefix /usr/local -camlp5dir `~/.opam/system/bin/ocamlfind query camlp5`
-  make world -j4 && make install
+  make world -j4
+  sudo make install
 
   # check
   coqtop -v
