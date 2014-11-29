@@ -1,15 +1,15 @@
 name: coq
-version: 0.0.1
-description: Latest Coq
+version: 0.0.2
+description: wercker box for the latest Coq
 type: main
 platform: ubuntu@12.04
 keywords:
   - coq
 packages:
-  - coq@8.4pl4
+  - coq@8.4pl5
 script: |
   # variables
-  export COQ_VER=8.4pl4
+  export COQ_VER=8.4pl5
 
   # install dependencies
   sudo apt-get update -y

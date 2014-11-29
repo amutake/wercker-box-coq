@@ -1,7 +1,7 @@
 Coq Box
 =======
 
-This is a wercker box containing latest stable coq.
+This is a wercker box containing the latest stable coq.
 
 License
 -------
