@@ -1,5 +1,5 @@
 name: coq
-version: 0.0.3
+version: 0.0.4
 description: wercker box for the latest Coq
 type: main
 platform: ubuntu@12.04
