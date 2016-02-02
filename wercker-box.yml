@@ -24,7 +24,7 @@ script: |
   echo 'eval `opam config env`' | sudo tee -a /etc/profile
 
   # install coq
-  opam repo add coq-released https://coq.inria.fr/opam/releasedo
+  opam repo add coq-released https://coq.inria.fr/opam/released
   opam update
   opam install -y -j4 coq.${COQ_VER}
 
