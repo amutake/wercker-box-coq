@@ -23,16 +23,10 @@ script: |
   eval `opam config env`
   echo 'eval `opam config env`' | sudo tee -a /etc/profile
 
-  # install ocamlfind and camlp5
-  opam install -y ocamlfind camlp5
-
   # install coq
-  wget http://coq.inria.fr/distrib/V${COQ_VER}/files/coq-${COQ_VER}.tar.gz
-  tar xf coq-${COQ_VER}.tar.gz
-  cd coq-${COQ_VER}
-  ./configure --prefix /usr/local -camlp5dir `~/.opam/system/bin/ocamlfind query camlp5`
-  make world -j4
-  sudo make install
+  opam repo add coq-released https://coq.inria.fr/opam/releasedo
+  opam update
+  opam install -y -j4 coq.${COQ_VER}
 
   # check
   coqtop -v
