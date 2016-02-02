@@ -7,6 +7,7 @@ keywords:
   - coq
 packages:
   - coq@8.4pl6
+no-response-timeout: 60
 script: |
   # variables
   export COQ_VER=8.4.6
