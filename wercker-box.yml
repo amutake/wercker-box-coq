@@ -9,7 +9,7 @@ packages:
   - coq@8.4pl6
 script: |
   # variables
-  export COQ_VER=8.4pl6
+  export COQ_VER=8.4.6
 
   # install dependencies
   sudo apt-get update -y
